@@ -4,7 +4,7 @@ namespace Daoo\Atividade03\controllers;
 use Daoo\Atividade03\controllers\api\Controller;
 
 class Route {
-	private static $query;
+	public static $query;
 
 	public static function routes(Array $routes) {
 		$url_path = trim($_SERVER['REQUEST_URI'], '/');

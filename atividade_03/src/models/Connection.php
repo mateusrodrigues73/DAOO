@@ -10,7 +10,7 @@ class Connection {
 
   public static function getConnection():PDO {
     if (!isset(self::$instance)) {
-      $configFile = file_get_contents(__DIR__.'/config.jsojn');
+      $configFile = file_get_contents(__DIR__.'/config.json');
       self::$config = json_decode($configFile);
       $db = self::$config->db;
       self::$instance = new PDO(

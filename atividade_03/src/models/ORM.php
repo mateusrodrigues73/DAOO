@@ -78,7 +78,7 @@ class ORM {
   }
 
   protected function selectById($id) {
-    $sql = "SELECT * FROM $this->table WHERE id_prod = :id";
+    $sql = "SELECT * FROM $this->table WHERE id_usuario = :id";
     $prepStmt = $this->conn->prepare($sql);
     $prepStmt->bindValue(':id', $id);
 
