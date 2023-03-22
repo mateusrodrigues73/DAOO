@@ -31,6 +31,7 @@ class Usuario extends ORM implements iDAO {
   ) {
     parent::__construct();
     $this->table = 'usuarios';
+    $this->primary = 'id_usuario';
     $this->nome = $nome;
     $this->sobrenome = $sobrenome;
     $this->email = $email;

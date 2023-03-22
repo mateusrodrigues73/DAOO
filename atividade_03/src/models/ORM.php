@@ -9,7 +9,8 @@ class ORM {
   protected $conn;   
   protected $table;  
   protected $columns; 
-  protected $params;  
+  protected $params;
+  protected $primary;  
   protected $updated; 
   protected $values; 
   protected $filters;
@@ -78,7 +79,7 @@ class ORM {
   }
 
   protected function selectById($id) {
-    $sql = "SELECT * FROM $this->table WHERE id_usuario = :id";
+    $sql = "SELECT * FROM $this->table WHERE $this->primary = :id";
     $prepStmt = $this->conn->prepare($sql);
     $prepStmt->bindValue(':id', $id);
 
