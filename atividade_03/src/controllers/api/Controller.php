@@ -2,6 +2,7 @@
 
 namespace Daoo\Atividade03\controllers\api;
 
+use Exception;
 abstract class Controller {
 	protected $model;
 	public abstract function index();
@@ -22,5 +23,14 @@ abstract class Controller {
 			}
     }
 		return true;
+	}
+
+	public function filter() {
+		$response = $this->model->filter($_POST);
+		if (!$response) {
+			echo json_encode('Sem resposta para: ' . $response);
+		} else {
+			echo json_encode('Retorno: ' . $response);
+		}
 	}
 }

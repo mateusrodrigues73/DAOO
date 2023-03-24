@@ -91,6 +91,27 @@ class ORM {
     }
   }
 
+  public function filter($arrayFilter) {
+    try {
+      if (!sizeof($arrayFilter)) {
+        die("ORM, filter: Filtros vazios!");
+      }
+      $this->setFilters($arrayFilter);
+      $sql = "SELECT * FROM $this->table WHERE $this->filters";
+      $prepStmt = $this->conn->prepare($sql);
+      if ($prepStmt->execute($this->values)) {
+        return $prepStmt->fetchAll(PDO::FETCH_ASSOC);
+      }
+      return false;
+    } catch (Exception $error) {
+      error_log("ORM, filter: " . print_r($error, true));
+      if(isset($prepStmt)) {
+        $this->dumpQuery($prepStmt);
+      }
+      return false;
+    }
+  }
+
   protected function dumpQuery($prepStatement) {
     ob_start();
     $prepStatement->debugDumpParams();
