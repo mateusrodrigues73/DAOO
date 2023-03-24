@@ -2,13 +2,13 @@
 
 namespace Daoo\Atividade03\controllers\api;
 
-use Daoo\Atividade03\models\Usuario as UsuarioModel;
+use Daoo\Atividade03\models\Produto as ProdutoModel;
 use Exception;
 
-class Usuario extends Controller {
+class Produto extends Controller {
   public function __construct() {
     $this->setHeader();
-    $this->model = new UsuarioModel();
+    $this->model = new ProdutoModel();
   }
 
   public function index() {
@@ -16,11 +16,11 @@ class Usuario extends Controller {
   }
 
   public function show($id) {
-    $usuario = $this->model->read($id);
-    if ($usuario) {
-      $response = ['usuario' => $usuario];
+    $produto = $this->model->read($id);
+    if ($produto) {
+      $response = ['produto' => $produto];
     } else {
-      $response = ['Erro' => 'Usuário não encontrado!'];
+      $response = ['Erro' => 'Produto não encontrado!'];
       header('HTTP/1.0 404 Not Found');
     }
     echo json_encode($response);
@@ -28,20 +28,21 @@ class Usuario extends Controller {
 
   public function store() {
     try {
-      $this->validateUsuarioRequest();
-      $this->model = new UsuarioModel(
-				$_POST['nome'],
-				$_POST['sobrenome'],
-				$_POST['email'],
-				$_POST['senha']
+      $this->validateProdutoRequest();
+      $this->model = new ProdutoModel(
+				$_POST['modelo'],
+				$_POST['marca'],
+				$_POST['categoria'],
+				$_POST['informacoes'],
+        $_POST['preco']
 			);
       if ($this->model->create()) {
         echo json_encode([
-          "success" => "Usuário criado com sucesso!",
+          "success" => "Produto criado com sucesso!",
 					"data" => $this->model->getColumns()
         ]);
       } else {
-        throw new Exception("Erro ao criar usuario!");
+        throw new Exception("Erro ao criar produto!");
       }
     } catch (Exception $error) {
 			$this->setHeader(500,'Erro interno do servidor!!!!');
@@ -54,23 +55,24 @@ class Usuario extends Controller {
   public function update() {
     try {
       if (!$this->validatePostRequest(['id'])) {
-        throw new Exception("Informe o ID do Usuário!!");
+        throw new Exception("Informe o ID do Produto!!");
       }
-      $this->validateUsuarioRequest();
-      $this->model = new UsuarioModel(
-				$_POST['nome'],
-				$_POST['sobrenome'],
-				$_POST['email'],
-				$_POST['senha']
+      $this->validateProdutoRequest();
+      $this->model = new ProdutoModel(
+				$_POST['modelo'],
+				$_POST['marca'],
+				$_POST['categoria'],
+				$_POST['informacoes'],
+        $_POST['preco']
 			);
       $this->model->id = $_POST["id"];
       if ($this->model->update()) {
         echo json_encode([
-          "success" => "Usuário atualizado com sucesso!",
+          "success" => "Produto atualizado com sucesso!",
 					"data" => $this->model->getColumns()
         ]);
       } else {
-        throw new Exception("Erro ao atualizar usuario!");
+        throw new Exception("Erro ao atualizar produto!");
       }
     } catch (Exception $error) {
 			echo json_encode([
@@ -87,10 +89,10 @@ class Usuario extends Controller {
       }
       $id = $_POST["id"];
       if ($this->model->delete($id)) {
-				$response = ["message:" => "Usuároip id:$id removido com sucesso!"];
+				$response = ["message:" => "Produto id:$id removido com sucesso!"];
 			} else {
 				$this->setHeader(500,'Internal Error.');
-				throw new Exception("Erro ao remover Usuário!");
+				throw new Exception("Erro ao remover Produto!");
 			}
       echo json_encode($response);
     } catch (Exception $error) {
@@ -100,7 +102,7 @@ class Usuario extends Controller {
 		}
   }
 
-  private function validateUsuarioRequest() {
+  private function validateProdutoRequest() {
 		$fields = [
 			'nome',
 			'sobrenome',
