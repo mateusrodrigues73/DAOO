@@ -1,6 +1,6 @@
 {
 	"db":{
-		"host":"localhost",
+		"host":"127.0.0.1",
 		"name":"cstsi_projeto_tcc",
 		"charset":"utf8",
 		"user":"mateus",
