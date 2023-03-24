@@ -100,31 +100,9 @@ class Usuario extends ORM implements iDAO {
     }
   }
 
-  public function filter($arrayFilter) {
-    try {
-      if (!sizeof($arrayFilter)) {
-        die("Usuario, filter: Filtros vazios!");
-      }
-      $this->setFilters($arrayFilter);
-      $sql = "SELECT * FROM produtos WHERE $this->filters";
-      $prepStmt = $this->conn->prepare($sql);
-      if ($prepStmt->execute($this->values)) {
-        return $prepStmt->fetchAll(PDO::FETCH_ASSOC);
-      }
-      return false;
-    } catch (Exception $error) {
-      error_log("Usuario, filter: " . print_r($error, true));
-      if(isset($prepStmt)) {
-        $this->dumpQuery($prepStmt);
-      }
-      return false;
-    }
-  }
-
   public function getColumns(): array {
     return [
       "nome" => $this->nome,
-      "sobrenome" => $this->sobrenome,
       "sobrenome" => $this->sobrenome,
       "email" => $this->email,
       "senha" => $this->senha,
