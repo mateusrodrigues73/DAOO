@@ -27,7 +27,11 @@
         <tbody>
             @foreach($usuarios as $usuario)
             <tr>
-                <td>{{$usuario->id}}</td>
+                <td>
+                    <a target=_blank href="/usuario/{{$usuario->id}}">
+                        {{$usuario->id}}
+                    </a>
+                </td>
                 <td>{{$usuario->nome}}</td>
                 <td>{{$usuario->sobrenome}}</td>
                 <td>{{$usuario->email}}</td>
