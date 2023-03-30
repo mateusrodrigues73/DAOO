@@ -28,7 +28,7 @@
             @foreach($usuarios as $usuario)
             <tr>
                 <td>
-                    <a target=_blank href="/usuario/{{$usuario->id}}">
+                    <a href="/usuario/{{$usuario->id}}">
                         {{$usuario->id}}
                     </a>
                 </td>

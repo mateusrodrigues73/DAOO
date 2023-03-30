@@ -24,7 +24,7 @@
             @foreach($produtos as $produto)
             <tr>
                 <td>
-                    <a target=_blank href="/produto/{{$produto->id}}">
+                    <a href="/produto/{{$produto->id}}">
                         {{$produto->id}}
                     </a>
                 </td>

@@ -21,7 +21,7 @@
             @foreach($forums as $forum)
             <tr>
                 <td>
-                    <a target=_blank href="/forum/{{$forum->id}}">
+                    <a href="/forum/{{$forum->id}}">
                         {{$forum->id}}
                     </a>
                 </td>
