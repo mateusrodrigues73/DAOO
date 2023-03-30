@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
-use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
@@ -17,5 +16,10 @@ class UsuarioController extends Controller
     public function index()
     {
         return view('usuarios.index', ['usuarios'=>$this->usuario->all()]);
+    }
+
+    public function show($id)
+    {
+        return view('usuarios.show', ['usuario'=>$this->usuario->find($id)]);
     }
 }
