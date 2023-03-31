@@ -14,11 +14,11 @@ return new class extends Migration
             $table->text('sobrenome');
             $table->text('email');
             $table->text('senha');
-            $table->boolean('estatus');
-            $table->text('imagem');
-            $table->boolean('administrador');
-            $table->float('media_de_avaliacoes');
-            $table->integer('total_de_avaliacoes');
+            $table->boolean('estatus')->default(false);
+            $table->text('imagem')->default('user.png');
+            $table->boolean('administrador')->default(false);
+            $table->float('media_de_avaliacoes')->default(0.0);
+            $table->integer('total_de_avaliacoes')->default(0);
             $table->timestamps();
         });
     }
