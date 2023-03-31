@@ -41,6 +41,16 @@
                 <td>{{($usuario->administrador)?'Sim':'Não'}}</td>
                 <td>{{$usuario->media_de_avaliacoes}}</td>
                 <td>{{$usuario->total_de_avaliacoes}}</td>
+                <td>
+                    <a href="{{ route('usuario.edit',$usuario->id) }}">
+                        <button>Editar</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ route('usuario.delete',$usuario->id) }}">
+                        <button>Deletar</button>
+                    </a>
+                </td>
             </tr>
             @endforeach
         </tbody>
