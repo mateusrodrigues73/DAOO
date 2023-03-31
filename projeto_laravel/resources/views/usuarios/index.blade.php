@@ -39,7 +39,7 @@
                 <td>{{($usuario->estatus)?'Verificado':'Não verificado'}}</td>
                 <td>{{$usuario->imagem}}</td>
                 <td>{{($usuario->administrador)?'Sim':'Não'}}</td>
-                <td>{{$usuario->media_de_avaaliacoes}}</td>
+                <td>{{$usuario->media_de_avaliacoes}}</td>
                 <td>{{$usuario->total_de_avaliacoes}}</td>
             </tr>
             @endforeach
@@ -48,5 +48,10 @@
     @else
     <p>Usuários não encontrados! </p>
     @endif
+    <div>
+        <a href="/usuario">
+            <button>Criar</button>
+        </a>
+    </div>
 </body>
 </html>
