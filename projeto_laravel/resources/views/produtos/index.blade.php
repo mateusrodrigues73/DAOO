@@ -33,6 +33,16 @@
                 <td>{{$produto->categoria}}</td>
                 <td>{{$produto->informacoes}}</td>         
                 <td>{{$produto->preco}}</td>
+                <td>
+                    <a href="{{ route('produto.edit', $produto->id) }}">
+                        <button>Editar</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ route('produto.delete', $produto->id) }}">
+                        <button>Deletar</button>
+                    </a>
+                </td>
             </tr>
             @endforeach
         </tbody>
@@ -40,5 +50,10 @@
     @else
     <p>Produtos não encontrados! </p>
     @endif
+    <div>
+        <a href="/produto">
+            <button>Criar</button>
+        </a>
+    </div>
 </body>
 </html>
