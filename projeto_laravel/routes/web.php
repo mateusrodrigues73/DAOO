@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// users routes
+// rotas de usuários
 Route::get('/usuarios', [UsuarioController::class, 'index']);
 Route::get('/usuario/{id}', [UsuarioController::class, 'show']);
 Route::get('usuario', [UsuarioController::class,'create']);
@@ -19,7 +19,7 @@ Route::post('usuario/{id}/update', [UsuarioController::class,'update'])->name('u
 Route::get('usuario/{id}/delete', [UsuarioController::class,'delete'])->name('usuario.delete');
 Route::post('usuario/{id}/remove', [UsuarioController::class,'destroy'])->name('usuario.remove');
 
-// products routes
+// rotas de produtos
 Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::get('/produto/{id}', [ProdutoController::class, 'show']);
 Route::get('produto', [ProdutoController::class,'create']);
@@ -29,6 +29,6 @@ Route::post('produto/{id}/update', [ProdutoController::class,'update'])->name('p
 Route::get('produto/{id}/delete', [ProdutoController::class,'delete'])->name('produto.delete');
 Route::post('produto/{id}/remove', [ProdutoController::class,'destroy'])->name('produto.remove');
 
-// forums routes
+// rotas de fóruns
 Route::get('/forums', [ForumController::class, 'index']);
 Route::get('/forum/{id}', [ForumController::class, 'show']);
