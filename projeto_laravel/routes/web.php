@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ForumController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,9 @@ Route::post('produto/{id}/remove', [ProdutoController::class,'destroy'])->name('
 // rotas de fóruns
 Route::get('/forums', [ForumController::class, 'index']);
 Route::get('/forum/{id}', [ForumController::class, 'show']);
+Route::get('forum', [ForumController::class,'create']);
+Route::post('forum', [ForumController::class,'store']);
+Route::get('forum/{id}/edit', [ForumController::class, 'edit'])->name('forum.edit');
+Route::post('forum/{id}/update', [ForumController::class,'update'])->name('forum.update');
+Route::get('forum/{id}/delete', [ForumController::class,'delete'])->name('forum.delete');
+Route::post('forum/{id}/remove', [ForumController::class,'destroy'])->name('forum.remove');
