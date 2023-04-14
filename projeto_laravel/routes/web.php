@@ -22,6 +22,12 @@ Route::post('usuario/{id}/remove', [UsuarioController::class,'destroy'])->name('
 // products routes
 Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::get('/produto/{id}', [ProdutoController::class, 'show']);
+Route::get('produto', [ProdutoController::class,'create']);
+Route::post('produto', [ProdutoController::class,'store']);
+Route::get('produto/{id}/edit', [ProdutoController::class, 'edit'])->name('produto.edit');
+Route::post('produto/{id}/update', [ProdutoController::class,'update'])->name('produto.update');
+Route::get('produto/{id}/delete', [ProdutoController::class,'delete'])->name('produto.delete');
+Route::post('produto/{id}/remove', [ProdutoController::class,'destroy'])->name('produto.remove');
 
 // forums routes
 Route::get('/forums', [ForumController::class, 'index']);
