@@ -15,4 +15,8 @@ class Produto extends Model
         'informacoes',
         'preco'
     ];
+
+    public function usuario(){
+        return $this->belongsTo(Usuario::class);
+    }
 }
