@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'nome',
         'sobrenome',
@@ -20,4 +21,9 @@ class Usuario extends Model
         'media_de_avaliacoes',
         'total_de_avaliacoes'
     ];
+
+    public function produtos()
+    {
+        return $this->hasMany(Produto::class);
+    }
 }
