@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\Usuario::factory(fake()->randomNumber(2))
+            ->hasProdutos(fake()->randomNumber(1))
+            ->create();
     }
 }
