@@ -17,7 +17,14 @@ class UsuarioFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nome' => fake()->firstName(),
+            'sobrenome' => fake()->lastName(),
+            'email' => fake()->unique()->safeEmail(),
+            'senha' => fake()->password(), 
+            'estatus' => fake()->boolean(),
+            'imagem' => fake()->word() . '.png',
+            'media_de_avaliacoes' => fake()->randomFloat(1, 0, 5),
+            'total_de_avaliacoes' => fake()->numberBetween(0, 100),
         ];
     }
 }
