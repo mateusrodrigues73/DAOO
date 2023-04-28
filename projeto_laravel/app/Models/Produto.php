@@ -13,7 +13,8 @@ class Produto extends Model
         'marca',
         'categoria',
         'informacoes',
-        'preco'
+        'preco',
+        'usuario_id'
     ];
 
     public function usuario(){
