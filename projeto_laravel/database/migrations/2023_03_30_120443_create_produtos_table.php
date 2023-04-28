@@ -16,6 +16,9 @@ return new class extends Migration
             $table->text('informacoes');
             $table->float('preco');
             $table->timestamps();
+            $table->foreignId('usuario_id')
+                ->references('id')->on('usuarios')
+                ->cascadeOnDelete();
         });
     }
 
