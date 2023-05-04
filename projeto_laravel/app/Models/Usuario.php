@@ -26,4 +26,9 @@ class Usuario extends Model
     {
         return $this->hasMany(Produto::class);
     }
+
+    public function usuarioMensagens()
+    {
+        return $this->hasMany(UsuarioMensagem::class);
+    }
 }
