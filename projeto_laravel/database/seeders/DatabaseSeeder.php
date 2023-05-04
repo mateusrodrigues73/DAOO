@@ -5,10 +5,6 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\Usuario;
-use App\Models\Produto;
-use App\Models\ProdutoImagem;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -23,10 +19,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Usuario::factory(50)->has(
-            Produto::factory(5)->has(
-                ProdutoImagem::factory()
-            )
-        )->create();
+        \App\Models\Usuario::factory(50)
+            ->hasProdutos(10)
+            ->create();
     }
 }
