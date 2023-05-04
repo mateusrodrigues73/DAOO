@@ -14,4 +14,8 @@ class UsuarioMensagem extends Model
         'remetente_id',
         'destinatario_id'
     ];
+
+    public function usuario(){
+        return $this->belongsTo(Usuario::class);
+    }
 }
