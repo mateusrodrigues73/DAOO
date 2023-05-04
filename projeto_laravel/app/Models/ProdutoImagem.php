@@ -19,5 +19,7 @@ class ProdutoImagem extends Model
         'produto_id'
     ];
 
-    
+    public function produto(){
+        return $this->belongsTo(Produto::class);
+    }
 }
