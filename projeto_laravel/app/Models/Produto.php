@@ -20,4 +20,9 @@ class Produto extends Model
     public function usuario(){
         return $this->belongsTo(Usuario::class);
     }
+
+    public function produtoImagem()
+    {
+        return $this->hasOne(ProdutoImagem::class);
+    }
 }
