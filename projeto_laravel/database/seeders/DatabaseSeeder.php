@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Usuario;
 use App\Models\Produto;
+use App\Models\Forum;
 use App\Models\ProdutoImagem;
 
 class DatabaseSeeder extends Seeder
@@ -23,10 +24,19 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Usuario::factory(50)->has(
-            Produto::factory(5)->has(
-                ProdutoImagem::factory()
-            )
-        )->create();
+        // Usuario::factory(50)->has(
+        //     Produto::factory(5)->has(
+        //         ProdutoImagem::factory()
+        //     )
+        // )->create();
+
+        Forum::factory(1)
+            ->recycle(
+                Usuario::factory(50)->has(
+                        Produto::factory(5)->has(
+                            ProdutoImagem::factory()
+                        )
+                    )->create()
+            )->create();
     }
 }
