@@ -32,6 +32,7 @@ class ProdutoController extends Controller
     {
         try {
             $newProduto = $request->all();
+            $newProduto['preco'] = floatval($newProduto['preco']); 
             $storedProduto = Produto::create($newProduto);
             return response()->json([
                 'Message' => "Produto inserido com sucesso",
