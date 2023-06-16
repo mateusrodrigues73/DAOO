@@ -10,6 +10,11 @@ class Forum extends Model
     use HasFactory;
     protected $fillable = [
         'titulo',
-        'tema'
+        'tema',
+        'usuario_id'
     ];
+
+    public function usuario(){
+        return $this->belongsTo(Usuario::class);
+    }
 }
