@@ -12,6 +12,9 @@ return new class extends Migration
             $table->id();
             $table->text('titulo');
             $table->text('tema');
+            $table->foreignId('usuario_id')
+            ->references('id')->on('usuarios')
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }
