@@ -64,7 +64,26 @@ class ProdutoController extends Controller
                 'Message'=>"Erro ao atualizar produto de id $id!",
                 'Exception'=>$error->getMessage()
             ];
-            $statusHttp = 404;
+            $statusHttp = 500;
+            return response()->json($responseError, $statusHttp);
+        }
+    }
+
+    public function remove($id)
+    {
+        try {
+            $produto = Produto::findOrFail($id);
+            $produto->delete();
+            return response()->json([
+                'Message'=>"Produto de id:$id removido com sucesso",
+                'Produto excluído'=>$produto
+            ]);
+        } catch(Exception $error) {
+            $responseError = [
+                'Message'=>"Erro ao excluir produto de id $id!",
+                'Exception'=>$error->getMessage()
+            ];
+            $statusHttp = 500;
             return response()->json($responseError, $statusHttp);
         }
     }
