@@ -6,22 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('usuario_mensagems', function (Blueprint $table) {
+        Schema::create('produto_mensagems', function (Blueprint $table) {
             $table->id();
             $table->text('mensagem');
             $table->timestamps();
-            $table->foreignId('remetente_id')
+            $table->foreignId('produto_id')
+                ->references('id')->on('produtos')
+                ->cascadeOnDelete();
+            $table->foreignId('usuario_id')
                 ->references('id')->on('usuarios');
-            $table->foreignId('destinatario_id')
-                ->references('id')->on('usuarios');
+            $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('usuario_mensagems');
+        Schema::dropIfExists('produto_mensagems');
     }
 };

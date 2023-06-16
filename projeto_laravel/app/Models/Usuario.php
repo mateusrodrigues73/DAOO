@@ -27,11 +27,6 @@ class Usuario extends Model
         return $this->hasMany(Produto::class);
     }
 
-    public function usuarioMensagens()
-    {
-        return $this->hasMany(UsuarioMensagem::class);
-    }
-
     public function produtoImagens(){
         return $this->hasManyThrough(ProdutoImagem::class, Produto::class);
     }
