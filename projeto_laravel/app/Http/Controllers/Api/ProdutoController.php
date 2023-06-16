@@ -43,8 +43,29 @@ class ProdutoController extends Controller
                 'Erro' => "Erro ao inserir novo produto!",
                 'Exception' => $error->getMessage(),
             ];
-            $statusHttp = 404;
+            $statusHttp = 500;
             return response() -> json($responseError, $statusHttp);
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $updateProduto = $request->all();
+            $updateProduto['preco'] = floatval($updateProduto['preco']);
+            $produto = Produto::findOrFail($id);
+            $produto->update($updateProduto);
+            return response()->json([
+                'Message'=>"Produto de id $id atualizado com sucesso",
+                'Produto'=>$produto
+            ]);
+        } catch (Exception $error) {
+            $responseError = [
+                'Message'=>"Erro ao atualizar produto de id $id!",
+                'Exception'=>$error->getMessage()
+            ];
+            $statusHttp = 404;
+            return response()->json($responseError, $statusHttp);
         }
     }
 }
