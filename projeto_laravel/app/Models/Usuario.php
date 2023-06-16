@@ -22,6 +22,11 @@ class Usuario extends Model
         'total_de_avaliacoes'
     ];
 
+    public function forums()
+    {
+        return $this->hasMany(Forum::class);
+    }
+
     public function produtos()
     {
         return $this->hasMany(Produto::class);
