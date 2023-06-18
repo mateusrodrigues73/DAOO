@@ -30,13 +30,21 @@ class DatabaseSeeder extends Seeder
         //     )
         // )->create();
 
-        Forum::factory(1)
-            ->recycle(
-                Usuario::factory(50)->has(
-                        Produto::factory(5)->has(
-                            ProdutoImagem::factory()
-                        )
-                    )->create()
-            )->create();
+        Usuario::factory(50)->has(
+            Produto::factory(5)->has(
+                ProdutoImagem::factory()
+            )
+        )->has(
+            Forum::factory(2)
+        )->create();
+
+        // Forum::factory(1)
+        //     ->recycle(
+        //         Usuario::factory(50)->has(
+        //                 Produto::factory(5)->has(
+        //                     ProdutoImagem::factory()
+        //                 )
+        //             )->create()
+        //     )->create();
     }
 }
