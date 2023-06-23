@@ -30,3 +30,5 @@ Route::delete('/produto/{id}', [ProdutoController::class, 'remove']);
 Route::apiResource('forums', ForumController::class);
 
 Route::apiResource('usuarios', UsuarioController::class);
+
+Route::get('usuarios/{usuario}/produtos', [UsuarioController::class, 'getProdutos']);
