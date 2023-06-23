@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProdutoRequest;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 use Exception;
@@ -33,18 +34,9 @@ class ProdutoController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(ProdutoRequest $request)
     {
         try {
-            $request->validate([
-                'modelo' => 'required',
-                'marca' => 'required',
-                'categoria' => 'required',
-                'informacoes' => 'required',
-                'preco' => 'required|numeric|gt:0',
-                'usuario_id' => 'required',
-            ]);
-
             $newProduto = $request->all();
             $newProduto['preco'] = floatval($newProduto['preco']);
 

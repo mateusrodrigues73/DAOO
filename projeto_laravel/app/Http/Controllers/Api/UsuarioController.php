@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UsuarioRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Exception;
@@ -27,16 +28,9 @@ class UsuarioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
         try {
-            $request->validate([
-                'nome' => 'required',
-                'sobrenome' => 'required',
-                'email' => 'required|email|unique:usuarios',
-                'senha' => 'required|min:8',
-            ]);
-
             return response()->json([
                 'Message' => 'Usuário criado com sucesso',
                 'Usuário:' => $this->usuario->create($request->all())

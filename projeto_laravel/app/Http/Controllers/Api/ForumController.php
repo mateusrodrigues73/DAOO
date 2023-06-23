@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ForumRequest;
 use App\Models\Forum;
 use Exception;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class ForumController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ForumRequest $request)
     {
         try {
             $request->validate([
