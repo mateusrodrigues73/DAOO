@@ -9,9 +9,14 @@ use Exception;
 
 class ProdutoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return response() -> json(Produto::all());
+        $perPage = $request->query('per_page');
+        $produtosPaginated = Produto::paginate($perPage);
+        $produtosPaginated->appends([
+            'per_page' => $perPage
+        ]);
+        return response() -> json($produtosPaginated);
     }
 
     public function show($id)
@@ -31,8 +36,18 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'modelo' => 'required',
+                'marca' => 'required',
+                'categoria' => 'required',
+                'informacoes' => 'required',
+                'preco' => 'required|numeric|gt:0',
+                'usuario_id' => 'required',
+            ]);
+
             $newProduto = $request->all();
-            $newProduto['preco'] = floatval($newProduto['preco']); 
+            $newProduto['preco'] = floatval($newProduto['preco']);
+
             $storedProduto = Produto::create($newProduto);
             return response()->json([
                 'Message' => "Produto inserido com sucesso",

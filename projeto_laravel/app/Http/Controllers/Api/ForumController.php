@@ -31,6 +31,10 @@ class ForumController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'titulo' => 'required',
+                'tema' => 'required',
+            ]);
             return response()->json([
                 'Message' => 'Fórum criado com sucesso',
                 'Fórum' => $this->forum->create($request->all())

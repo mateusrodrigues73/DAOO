@@ -30,6 +30,13 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'nome' => 'required',
+                'sobrenome' => 'required',
+                'email' => 'required|email|unique:usuarios',
+                'senha' => 'required|min:8',
+            ]);
+
             return response()->json([
                 'Message' => 'Usuário criado com sucesso',
                 'Usuário:' => $this->usuario->create($request->all())
@@ -92,5 +99,10 @@ class UsuarioController extends Controller
             $statusHttp = 500;
             return response()->json($responseError, $statusHttp);
         }
+    }
+
+    public function getProdutos(Usuario $usuario)
+    {
+        return response()->json($usuario->load('produtos'));
     }
 }
