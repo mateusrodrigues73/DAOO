@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ForumController;
 use App\Http\Controllers\Api\ProdutoController;
+use App\Http\Controllers\Api\UsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,5 @@ Route::put('/produto/{id}', [ProdutoController::class, 'update']);
 Route::delete('/produto/{id}', [ProdutoController::class, 'remove']);
 
 Route::apiResource('forums', ForumController::class);
+
+Route::apiResource('usuarios', UsuarioController::class);
