@@ -15,7 +15,6 @@ class Usuario extends Model
         'email',
         'senha',
         'estatus',
-        'estatus',
         'imagem',
         'administrador',
         'media_de_avaliacoes',
