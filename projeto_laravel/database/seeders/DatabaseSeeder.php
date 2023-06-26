@@ -9,6 +9,7 @@ use App\Models\Usuario;
 use App\Models\Produto;
 use App\Models\Forum;
 use App\Models\ProdutoImagem;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +25,13 @@ class DatabaseSeeder extends Seeder
         )->has(
             Forum::factory(2)
         )->create();
+
+        Usuario::factory()->create([
+            'nome' => 'admin',
+            'sobrenome' => 'admin',
+            'email' => 'admin@gmail',
+            'administrador' => true,
+            'senha' => Hash::make('admin')
+        ]);
     }
 }
