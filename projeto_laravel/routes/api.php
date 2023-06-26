@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\ForumController;
 use App\Http\Controllers\Api\ProdutoController;
 use App\Http\Controllers\Api\UsuarioController;
@@ -17,18 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/produto/{id}', [ProdutoController::class, 'show']);
+    Route::post('/produto', [ProdutoController::class, 'store']);
+    Route::put('/produto/{id}', [ProdutoController::class, 'update']);
+    Route::delete('/produto/{id}', [ProdutoController::class, 'remove']);
+
+    Route::apiResource('forums', ForumController::class);
+
+    Route::apiResource('usuarios', UsuarioController::class);
+    Route::get('usuarios/{usuario}/produtos', [UsuarioController::class, 'getProdutos']);
 });
 
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('usuarios', [UsuarioController::class, 'store']);
+Route::get('forums', [ForumController::class, 'index']);
 Route::get('/produtos', [ProdutoController::class, 'index']);
-Route::get('/produto/{id}', [ProdutoController::class, 'show']);
-Route::post('/produto', [ProdutoController::class, 'store']);
-Route::put('/produto/{id}', [ProdutoController::class, 'update']);
-Route::delete('/produto/{id}', [ProdutoController::class, 'remove']);
-
-Route::apiResource('forums', ForumController::class);
-
-Route::apiResource('usuarios', UsuarioController::class);
-
-Route::get('usuarios/{usuario}/produtos', [UsuarioController::class, 'getProdutos']);
