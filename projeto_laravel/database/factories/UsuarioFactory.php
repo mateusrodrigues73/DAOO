@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Usuario>
@@ -25,6 +26,7 @@ class UsuarioFactory extends Factory
             'imagem' => fake()->word() . '.png',
             'media_de_avaliacoes' => fake()->randomFloat(1, 0, 5),
             'total_de_avaliacoes' => fake()->numberBetween(0, 100),
+            'remember_token' => Str::random(10),
         ];
     }
 }
