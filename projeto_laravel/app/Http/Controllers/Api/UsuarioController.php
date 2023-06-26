@@ -31,9 +31,14 @@ class UsuarioController extends Controller
     public function store(UsuarioRequest $request)
     {
         try {
+            $usuario = $request->all();
+            $usuario['senha'] = password_hash(
+                $usuario['senha'],
+                PASSWORD_DEFAULT    
+            );
             return response()->json([
                 'Message' => 'Usuário criado com sucesso',
-                'Usuário:' => $this->usuario->create($request->all())
+                'Usuário:' => $this->usuario->create($usuario)
             ]);
         } catch (Exception $error) {
             $responseError = [
