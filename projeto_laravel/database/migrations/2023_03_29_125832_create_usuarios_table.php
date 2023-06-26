@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('senha');
             $table->boolean('estatus')->default(false);
             $table->text('imagem')->default('user.png');
-            $table->boolean('administrador')->default(false);
+            $table->enum('papel', ['admin', 'manager', 'client'])->default('client');
             $table->float('media_de_avaliacoes')->default(0.0);
             $table->integer('total_de_avaliacoes')->default(0);
             $table->rememberToken();
