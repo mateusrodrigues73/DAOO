@@ -1,0 +1,544 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "projeto_laravel_api",
+    "dateExported": "2023-06-26T13:47:58.023Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "bc60af81-b8d6-444b-9f67-10ec0a35fe79",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "get produto (paginated)",
+            "url": "http://127.0.0.1:8000/api/produtos?per_page=5&page=20",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-06-16T12:55:26.227Z",
+            "modified": "2023-06-23T13:39:20.406Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "per_page",
+                    "value": "5",
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "20",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "9933b315-b1c5-463f-966a-08c87a0ba279",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "get produto/id (one)",
+            "url": "http://127.0.0.1:8000/api/produto/25",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-16T13:02:51.915Z",
+            "modified": "2023-06-23T16:34:47.011Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5abcf84a-5191-4575-9e86-63deaa0ec860",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "post produto (new)",
+            "url": "http://127.0.0.1:8000/api/produto",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-16T13:04:07.943Z",
+            "modified": "2023-06-23T16:35:32.828Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "modelo",
+                        "value": "outro produto"
+                    },
+                    {
+                        "name": "marca",
+                        "value": "de produto"
+                    },
+                    {
+                        "name": "categoria",
+                        "value": "produtos"
+                    },
+                    {
+                        "name": "informacoes",
+                        "value": "um produto"
+                    },
+                    {
+                        "name": "preco",
+                        "value": "asd"
+                    },
+                    {
+                        "name": "usuario_id",
+                        "value": "2"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "1d3e9645-2702-4e17-8b98-ff66ced49840",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "put produto (update)",
+            "url": "http://127.0.0.1:8000/api/produto/25",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-06-16T13:32:39.751Z",
+            "modified": "2023-06-23T16:36:17.450Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "modelo",
+                        "value": "produto atualizado"
+                    },
+                    {
+                        "name": "marca",
+                        "value": "de produto"
+                    },
+                    {
+                        "name": "categoria",
+                        "value": "produtos"
+                    },
+                    {
+                        "name": "informacoes",
+                        "value": "um produto"
+                    },
+                    {
+                        "name": "preco",
+                        "value": "1200"
+                    },
+                    {
+                        "name": "usuario_id",
+                        "value": "2"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ea50f92f-fcf0-4c7f-bf0e-5cd591b5dfe9",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "delete produto (remove)",
+            "url": "http://127.0.0.1:8000/api/produto/251",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-06-16T13:53:43.597Z",
+            "modified": "2023-06-23T16:50:03.621Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e51dfcba-0c43-481a-a1d8-d64e90ebfc8d",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "get forum (all)",
+            "url": "http://127.0.0.1:8000/api/forums",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-06-18T13:53:01.642Z",
+            "modified": "2023-06-18T14:00:29.032Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9e6c2e5c-b8c0-4e62-be61-619bd13543be",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "get forum/id (one)",
+            "url": "http://127.0.0.1:8000/api/forums/10",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-06-18T14:08:24.045Z",
+            "modified": "2023-06-23T16:51:38.472Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "785f0474-c3fc-44bd-bf2e-0ad20e5024be",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "post forum (new)",
+            "url": "http://127.0.0.1:8000/api/forums",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-06-18T14:16:03.919Z",
+            "modified": "2023-06-23T16:52:08.014Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "titulo",
+                        "value": "um fórum"
+                    },
+                    {
+                        "name": "tema",
+                        "value": ""
+                    },
+                    {
+                        "name": "usuario_id",
+                        "value": "1"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "71436b74-c8e9-4342-ae9d-337d67b0a7b4",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "put forum (update)",
+            "url": "http://127.0.0.1:8000/api/forums/102",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-06-18T14:31:44.996Z",
+            "modified": "2023-06-23T16:52:32.232Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "titulo",
+                        "value": "um fórum atualizado"
+                    },
+                    {
+                        "name": "tema",
+                        "value": "algum tema"
+                    },
+                    {
+                        "name": "usuario_id",
+                        "value": "1"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ff8b6104-fa65-47a0-966e-38c3755a5225",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "delete forum (remove)",
+            "url": "http://127.0.0.1:8000/api/forums/102",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-06-18T14:38:40.616Z",
+            "modified": "2023-06-23T16:52:54.564Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "56cb2373-a113-4ea4-9fa6-e5121e27d15b",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "get usuario (all)",
+            "url": "http://127.0.0.1:8000/api/usuarios",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-06-23T12:20:52.042Z",
+            "modified": "2023-06-23T16:53:30.522Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "17f0b6c9-ac9e-476e-80c6-81086cdf9cf7",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "get usuario/id (one)",
+            "url": "http://127.0.0.1:8000/api/usuarios/51",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-06-23T12:38:52.540Z",
+            "modified": "2023-06-23T16:54:00.333Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "131f5fa7-6c66-43f8-b490-1008e5bb50b7",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "post usuario (new)",
+            "url": "http://127.0.0.1:8000/api/usuarios",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2023-06-23T12:39:55.106Z",
+            "modified": "2023-06-23T16:31:04.688Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "nome",
+                        "value": "José"
+                    },
+                    {
+                        "name": "sobrenome",
+                        "value": "Silva"
+                    },
+                    {
+                        "name": "email",
+                        "value": "j@g.com"
+                    },
+                    {
+                        "name": "senha",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ac66b520-bd3c-42ce-88bd-76d35ed40e64",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "put usuario (update)",
+            "url": "http://127.0.0.1:8000/api/usuarios/51",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2023-06-23T12:43:50.501Z",
+            "modified": "2023-06-23T16:54:28.241Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "nome",
+                        "value": "dsa"
+                    },
+                    {
+                        "name": "sobrenome",
+                        "value": "dsa"
+                    },
+                    {
+                        "name": "email",
+                        "value": "dsa"
+                    },
+                    {
+                        "name": "senha",
+                        "value": "dsa"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "aa8aa684-a04b-4862-9889-bcf2d6515ab0",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "delete produto (remove)",
+            "url": "http://127.0.0.1:8000/api/usuarios/51",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2023-06-23T12:58:01.554Z",
+            "modified": "2023-06-23T16:55:42.049Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "528765b4-b0df-42b3-b2dd-068374becde1",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "get usuarios/id/produtos",
+            "url": "http://127.0.0.1:8000/api/usuarios/1/produtos",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2023-06-23T13:12:20.133Z",
+            "modified": "2023-06-23T16:32:27.424Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 2|32w5qNYLS9MgUdCN3hhV5dswkvRaelTytB5v1nht"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2deb2a22-95db-4be0-b730-61270c02bba2",
+            "colId": "288f68cb-081c-4ccf-987a-52f7e4edd250",
+            "containerId": "",
+            "name": "login",
+            "url": "http://127.0.0.1:8000/api/login",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2023-06-23T15:07:53.277Z",
+            "modified": "2023-06-23T16:31:21.612Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "j@g.com"
+                    },
+                    {
+                        "name": "senha",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}
