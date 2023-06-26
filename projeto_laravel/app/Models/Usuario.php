@@ -19,7 +19,7 @@ class Usuario extends Authenticatable
         'senha',
         'estatus',
         'imagem',
-        'administrador',
+        'papel',
         'media_de_avaliacoes',
         'total_de_avaliacoes'
     ];
