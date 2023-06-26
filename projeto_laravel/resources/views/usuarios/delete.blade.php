@@ -15,7 +15,7 @@
             <li>Senha: {{ $usuario->senha }}</li>
             <li>Estatus: {{ $usuario->email }}</li>
             <li>Imagem: {{ $usuario->imagem }}</li>
-            <li>Administrador: {{ $usuario->administrador }}</li>
+            <li>Papel: {{ $usuario->papel }}</li>
             <li>Média de avaliações: {{ $usuario->media_de_avaliacoes }}</li>
             <li>Total de avaliações: {{ $usuario->total_de_avaliacoes }}</li>
         </ul>

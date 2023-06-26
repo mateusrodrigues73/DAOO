@@ -19,7 +19,6 @@
                 <th>Senha</th>
                 <th>Estatus</th>
                 <th>Imagem</th>
-                <th>Administrador</th>
                 <th>Media de avaliações</th>
                 <th>Total de avaliações</th>
             </tr>
@@ -33,7 +32,6 @@
                 <td>{{$usuario->senha}}</td>
                 <td>{{($usuario->estatus)?'Verificado':'Não verificado'}}</td>
                 <td>{{$usuario->imagem}}</td>
-                <td>{{($usuario->administrador)?'Sim':'Não'}}</td>
                 <td>{{$usuario->media_de_avaaliacoes}}</td>
                 <td>{{$usuario->total_de_avaliacoes}}</td>
             </tr>
