@@ -19,6 +19,7 @@ return new class extends Migration
             $table->boolean('administrador')->default(false);
             $table->float('media_de_avaliacoes')->default(0.0);
             $table->integer('total_de_avaliacoes')->default(0);
+            $table->rememberToken();
             $table->timestamps();
         });
     }
