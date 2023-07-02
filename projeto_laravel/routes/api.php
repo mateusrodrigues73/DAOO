@@ -4,7 +4,6 @@ use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\ForumController;
 use App\Http\Controllers\Api\ProdutoController;
 use App\Http\Controllers\Api\UsuarioController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,15 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/produto/{id}', [ProdutoController::class, 'show'])->middleware('ability:client,admin');
-    Route::post('/produto', [ProdutoController::class, 'store'])->middleware('ability:client,admin');
-    Route::put('/produto/{id}', [ProdutoController::class, 'update'])->middleware('ability:client,admin');
+    Route::get('/produto/{id}', [ProdutoController::class, 'show'])->middleware('ability:admin');
+    Route::post('/produto', [ProdutoController::class, 'store'])->middleware('ability:admin');
+    Route::put('/produto/{id}', [ProdutoController::class, 'update'])->middleware('ability:admin');
     Route::delete('/produto/{id}', [ProdutoController::class, 'remove'])->middleware('ability:admin');
-
     Route::apiResource('forums', ForumController::class)->middleware('ability:manager,admin');
-
     Route::apiResource('usuarios', UsuarioController::class)->middleware('ability:client,admin');
-    Route::get('usuarios/{usuario}/produtos', [UsuarioController::class, 'getProdutos'])->middleware('ability:client,admin');
+    Route::get('usuarios/{usuario}/produtos', [UsuarioController::class, 'getProdutos'])
+        ->middleware('ability:client,admin');
 });
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
