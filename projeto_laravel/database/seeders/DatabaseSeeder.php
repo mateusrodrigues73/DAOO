@@ -33,5 +33,13 @@ class DatabaseSeeder extends Seeder
             'papel' => 'admin',
             'senha' => Hash::make('admin')
         ]);
+
+        Usuario::factory()->create([
+            'nome' => 'manager',
+            'sobrenome' => 'manager',
+            'email' => 'manager@gmail',
+            'papel' => 'manager',
+            'senha' => Hash::make('manager')
+        ]);
     }
 }
